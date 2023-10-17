@@ -54,6 +54,7 @@ app.get("/", (req, res) => {
     root: __dirname,
   });
 });
+
 //fungsi suara capital 
 function capital(textSound){
     const arr = textSound.split(" ");
@@ -190,6 +191,11 @@ const updateQR = (data) => {
             break;
     }
 };
+
+app.get("/", async (req, res) => {
+    console.log("Bot Berjalan Om ");
+    return  res.status(200).send("Halo Om Ini Bot WA");
+})
 
 // send text message to wa user
 app.post("/send-message", async (req, res) =>{
